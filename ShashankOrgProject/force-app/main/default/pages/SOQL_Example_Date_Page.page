@@ -1,0 +1,23 @@
+<apex:page controller="SOQL_Example_Date">
+    <apex:form >
+    <apex:pageBlock title="Opportunities">
+        
+    	<apex:pageBlockButtons >
+            <apex:commandButton value="Last Year" action="{!getOpptyRecordsClosedLastYear}"  />
+            <apex:commandButton value="This Year" action="{!getOpptyRecordsClosedLastYear}"  />
+            <apex:commandButton value="This Week" action="{!getOpptyRecordsClosedThisWeek}"  />
+        </apex:pageBlockButtons>
+        
+        
+        <apex:pageBlockTable value="{!opptyList}" var="oppty">   <!-- Value and Var are required attributes for pageblock table -->
+        	<apex:column value="{!oppty.Name}" />
+            <apex:column value="{!oppty.Amount}" />
+            <apex:column value="{!oppty.CloseDate}" />
+            <apex:column value="{!oppty.CreatedDate}" />
+            <apex:column value="{!oppty.StageName}" />   
+            
+        </apex:pageBlockTable>
+    
+    </apex:pageBlock>
+   </apex:form> 
+</apex:page>

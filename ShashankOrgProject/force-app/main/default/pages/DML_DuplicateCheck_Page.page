@@ -1,0 +1,34 @@
+<apex:page controller="DML_DuplicateCheck_Example">
+    <apex:form >
+        <apex:pageMessages />
+        <apex:pageBlock title="New Account Creation" id="pb">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Create New Account" action="{!accountCreation}" />
+                <apex:commandButton value="Cancel" action="{!cancel}" reRender="pb" />
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Account Name" />
+                    <apex:inputText value="{!accName}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Account Industry" />
+                    <apex:inputText value="{!accInd}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Account Rating" />
+                    <apex:inputText value="{!rating}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Account Phone" />
+                    <apex:inputText value="{!accPhone}" />
+                </apex:pageBlockSectionItem>
+            
+            </apex:pageBlockSection>
+            
+        
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

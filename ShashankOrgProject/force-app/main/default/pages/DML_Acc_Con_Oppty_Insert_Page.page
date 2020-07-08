@@ -1,0 +1,26 @@
+<apex:page controller="DML_Acc_Con_Oppty_Insert_example"> <!-- DML_Acc_Con_Oppty_Insert_example obj1 = new DML_Acc_Con_Oppty_Insert_example() -->
+    <apex:form >
+    	<apex:pageBlock title="Account Contact And Opportunity">
+        	<apex:pageBlockButtons >
+                <apex:commandButton value="Create" action="{!createAccConOppty}" />
+                <apex:commandButton value="Cancel" action="{!reset}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Account Info" collapsible="false">
+                <apex:inputText value="{!acc.Name}" />
+                <apex:inputText value="{!acc.Industry}" />
+                <apex:inputText value="{!acc.Rating}" />
+                <apex:inputText value="{!acc.Phone}" />            
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact Info" collapsible="false">
+                <apex:inputText value="{!con.LastName}" />
+                <apex:inputText value="{!con.FirstName}" />
+                <apex:inputText value="{!con.Email}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Opportunity Info" collapsible="false">
+                <apex:inputText value="{!oppty.Name}" />
+                <apex:inputField value="{!oppty.CloseDate}" />
+                <apex:inputText value="{!oppty.stageName}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

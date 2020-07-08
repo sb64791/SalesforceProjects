@@ -1,0 +1,41 @@
+<apex:page controller="User_Validation" >
+    <apex:form >
+    <apex:pageBlock title="USERS VALIDATION">
+        <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Verify" action="{!Verification}"/>
+                </apex:pageBlockButtons>
+               
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter Username "/>
+                    <apex:inputtext value="{!userUsername}"/>
+                </apex:pageBlockSectionItem>
+               
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="Enter Email "/>
+                    <apex:inputText value="{!UserEmail}"/>
+                </apex:pageblocksectionitem>
+            </apex:pageBlockSection>
+        
+        	<apex:outputPanel rendered="{!noValues}">
+                <apex:outputText value="Enter values in Username and UserEmail then search for user"/>
+          </apex:outputPanel>
+               
+          <apex:outputPanel rendered="{!resultSize = 0 && noValues = false }">
+                <apex:outputText value="NO USER FOUND"/>
+          </apex:outputPanel>
+
+          <apex:outputPanel rendered="{!resultSize != 0}">  
+              <apex:pageBlockTable value="{!userList}" var="usr">
+                        <apex:column Value="{!usr.Username}"/>
+                        <apex:column value="{!usr.Email}"/>
+                        <apex:column value="{!usr.Alias}"/>
+                        <apex:column value="{!usr.UserRoleId}"/>
+                        <apex:column value="{!usr.IsActive}"/>  
+              </apex:pageBlockTable>
+        </apex:outputPanel>
+                
+               
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

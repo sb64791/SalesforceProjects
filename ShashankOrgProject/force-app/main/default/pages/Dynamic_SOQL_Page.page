@@ -1,0 +1,29 @@
+<apex:page controller="Dynamic_SOQL_Example">
+    <apex:form >
+    	<apex:pageBlock title="Dynamic SOQL">
+        	<apex:pageBlockButtons location="top">
+            	<apex:commandButton value="Search" action="{!dynamicSearch}" />
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection >
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter Name" />
+                    <apex:inputText value="{!accName}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter Industry" />
+                    <apex:inputText value="{!accInd}" /> 
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockTable value="{!accList}" var="acc">
+            	<apex:column value="{!acc.Name}" />
+                <apex:column value="{!acc.Industry}" />
+                <apex:column value="{!acc.Rating}" />
+                <apex:column value="{!acc.Phone}" />
+            </apex:pageBlockTable>
+            
+        
+        </apex:pageBlock>
+      
+    </apex:form>
+</apex:page>

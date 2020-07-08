@@ -1,0 +1,41 @@
+<apex:page controller="Parent_Child_Example">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockButtons location="top">
+            	<apex:commandButton value="Fetch Child records" action="{!getOpptyContactsByAccount}" />
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection >
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Account Name" />
+                    <apex:inputText value="{!accName}" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Account Industry" />
+                    <apex:inputText value="{!accInd}" />
+                </apex:pageBlockSectionItem>
+            
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockTable value="{!accListWithChildOpptyContacts}" var="acc" >
+                <apex:column value="{!acc.Name}" />
+                <apex:column headerValue="Opportunity" >
+                    <apex:repeat value="{!acc.Opportunities}" var="oppty">
+                        {!oppty.Name} <br/>
+                    </apex:repeat>
+                </apex:column>
+                <apex:column headerValue="Contacts" >
+                    <apex:repeat value="{!acc.Contacts}" var="con">
+                        {!con.Name} <br/>
+                    </apex:repeat>
+                </apex:column>
+                
+           </apex:pageBlockTable>
+        
+        </apex:pageBlock>
+    
+    
+    </apex:form>
+    
+</apex:page>

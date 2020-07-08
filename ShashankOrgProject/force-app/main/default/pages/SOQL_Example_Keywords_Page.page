@@ -1,0 +1,26 @@
+<apex:page controller="SOQL_Example_Keywords_01">
+    
+    <apex:form >
+    <apex:pageBlock title="Accounts">
+        
+    	<apex:pageBlockButtons >
+            <apex:commandButton value="Fetch All Rows" action="{!fetchAllTheRows}" />
+            <apex:commandButton value="Order By" action="{!fetchtRecordsOrderBy}"  />
+            <apex:commandButton value="After 2016"  />
+            <apex:commandButton value="This Year"  />
+            <apex:commandButton value="This Week"  />
+            <apex:commandButton value="Last Month"  />
+        </apex:pageBlockButtons>
+        
+        
+        <apex:pageBlockTable value="{!accList}" var="acc">   <!-- Value and Var are required attributes for pageblock table -->
+        	<apex:column value="{!acc.Name}" />
+            <apex:column value="{!acc.Industry}" />
+            <apex:column value="{!acc.Rating}" />
+            <apex:column value="{!acc.Phone}" />
+        </apex:pageBlockTable>
+    
+    </apex:pageBlock>
+   </apex:form> 
+    
+</apex:page>
