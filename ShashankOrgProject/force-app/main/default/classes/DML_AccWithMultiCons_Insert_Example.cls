@@ -1,5 +1,6 @@
 // Desc : Create an account with Multiple contacts added to the new account
 // Added this comment for GIT
+// added new comment line to test from Git folder 
 public class DML_AccWithMultiCons_Insert_Example {
     
     public Account acc				{set; get;}
